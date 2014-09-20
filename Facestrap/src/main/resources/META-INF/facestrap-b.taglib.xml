@@ -1,39 +1,71 @@
-<facelet-taglib version="2.0" 
-				xmlns="http://java.sun.com/xml/ns/javaee"
-				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-				xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facelettaglibrary_2_0.xsd">
-    
-	<namespace>http://thjug.com/facestrap/ui</namespace>
+<facelet-taglib version="2.0"
+                xmlns="http://java.sun.com/xml/ns/javaee"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facelettaglibrary_2_0.xsd">
 
-	<tag>
-		<tag-name>div</tag-name>
-		<component>
-			<component-type>Div</component-type>
-		</component>
+    <namespace>http://thjug.com/facestrap/ui</namespace>
 
-		<attribute>
-			<name>id</name>
-			<required>true</required>
-			<type>java.lang.String</type>
-			<description>Document ID</description>
-		</attribute>
-		<attribute>
-			<name>css</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>CSS Class</description>
-		</attribute>
-		<attribute>
-			<name>style</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>Style</description>
-		</attribute>
-		<attribute>
-			<name>rendered</name>
-			<required>false</required>
-			<type>java.lang.Boolean</type>
-			<description>Render Flag</description>
-		</attribute>
-	</tag>
+    <tag>
+        <tag-name>div</tag-name>
+        <component>
+            <component-type>UIDiv</component-type>
+        </component>
+
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+            <description>Document ID</description>
+        </attribute>
+        <attribute>
+            <name>css</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>CSS Class</description>
+        </attribute>
+        <attribute>
+            <name>style</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>Style</description>
+        </attribute>
+        <attribute>
+            <name>rendered</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+            <description>Render Flag</description>
+        </attribute>
+    </tag>
+
+    <tag>
+        <tag-name>span</tag-name>
+        <component>
+            <component-type>UISpan</component-type>
+        </component>
+
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+            <description>Document ID</description>
+        </attribute>
+        <attribute>
+            <name>css</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>CSS Class</description>
+        </attribute>
+        <attribute>
+            <name>style</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>Style</description>
+        </attribute>
+        <attribute>
+            <name>rendered</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+            <description>Render Flag</description>
+        </attribute>
+    </tag>
 </facelet-taglib>

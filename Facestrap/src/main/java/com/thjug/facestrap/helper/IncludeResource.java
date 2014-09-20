@@ -14,7 +14,6 @@
  */
 package com.thjug.facestrap.helper;
 
-import com.thjug.facestrap.Div;
 import java.io.IOException;
 import javax.faces.application.Resource;
 import javax.faces.application.ResourceHandler;
@@ -30,7 +29,7 @@ import org.slf4j.LoggerFactory;
  */
 public class IncludeResource {
 
-	private static final Logger LOG = LoggerFactory.getLogger(Div.class);
+	private static final Logger LOG = LoggerFactory.getLogger(IncludeResource.class);
 
 	public static void includeCss(final FacesContext context, final String resource, final String library)
 			throws IOException {

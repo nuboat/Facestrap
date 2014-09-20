@@ -14,56 +14,65 @@
  */
 package com.thjug.facestrap;
 
+import com.thjug.facestrap.define.Attribute;
 import com.thjug.facestrap.helper.IncludeResource;
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.util.Arrays;
 import java.util.List;
-import javax.faces.component.FacesComponent;
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIComponentBase;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  *
  * @author nuboat
  */
-@FacesComponent("Div")
-public class Div extends BootstrapComponent {
+public abstract class UIBootstrap extends UIComponentBase {
 
-	private static final Logger LOG = LoggerFactory.getLogger(Div.class);
+	protected abstract String getRootElement();
 
-	private static final String[] keys = {"id", "style"};
-
-	private static final List<String> attributes = Arrays.asList(keys);
-
-	@Override
-	public String getFamily() {
-		return "com.thjug.facestrap";
-	}
+	protected abstract List<Attribute> getUIAttribute();
 
 	@Override
 	public void encodeBegin(final FacesContext context) throws IOException {
 		IncludeResource.includeCss(context, "css/bootstrap.min.css", "bootstrap");
 
 		final ResponseWriter writer = context.getResponseWriter();
-		writer.startElement("div", this);
-		attributes.stream().forEach(k -> addElement(writer, k, getAttributes().get(k)));
+		writer.startElement(getRootElement(), this);
+		Arrays.asList(getUIAttribute()).stream().
+				forEach(k -> addElement(writer, k.toString(), getAttributes().get(k.toString())));
 		if (getAttributes().get("css") != null) {
 			addElement(writer, "class", getAttributes().get("css"));
 		}
-		super.encodeBegin(context);
-	}
-
-	@Override
-	public void encodeChildren(final FacesContext context) throws IOException {
-		super.encodeChildren(context);
+		super.encodeEnd(context);
 	}
 
 	@Override
 	public void encodeEnd(final FacesContext context) throws IOException {
-		context.getResponseWriter().endElement("div");
+		context.getResponseWriter().endElement(getRootElement());
 		super.encodeEnd(context);
 	}
 
+	protected void addChild(final ResponseWriter writer, final UIComponent c)
+			throws UncheckedIOException {
+		try {
+			writer.write(c.toString());
+		} catch (final IOException e) {
+			throw new UncheckedIOException(e);
+		}
+	}
+
+	protected void addElement(final ResponseWriter writer, final String name, final Object value)
+			throws UncheckedIOException {
+		if (value == null || value.toString().isEmpty()) {
+			return;
+		}
+		try {
+			writer.writeAttribute(name, value.toString(), null);
+		} catch (final IOException e) {
+			throw new UncheckedIOException(e);
+		}
+	}
 }
