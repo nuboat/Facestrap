@@ -31,7 +31,15 @@ public class IncludeResource {
 
 	private static final Logger LOG = LoggerFactory.getLogger(IncludeResource.class);
 
-	public static void includeCss(final FacesContext context, final String resource, final String library)
+	public static void includeCSS(final FacesContext context) throws IOException {
+		includeCSS(context, "css/bootstrap.min.css", "bootstrap");
+	}
+
+	public static void includeJS(final FacesContext context) throws IOException {
+		includeJS(context, "js/bootstrap.min.js", "bootstrap");
+	}
+
+	private static void includeCSS(final FacesContext context, final String resource, final String library)
 			throws IOException {
 
 		if (isResourceIncluded(context, resource)) {
@@ -53,7 +61,7 @@ public class IncludeResource {
 		w.append('\n');
 	}
 
-	public static void includeJavaScript(final FacesContext context, final String resource, final String library)
+	private static void includeJS(final FacesContext context, final String resource, final String library)
 			throws IOException {
 
 		if (isResourceIncluded(context, resource)) {
@@ -64,7 +72,7 @@ public class IncludeResource {
 		request.setAttribute(resource, Boolean.TRUE);
 
 		final ResourceHandler rh = context.getApplication().getResourceHandler();
-		final Resource r = rh.createResource(resource);
+		final Resource r = rh.createResource(resource, library);
 		final ResponseWriter w = context.getResponseWriter();
 		w.write('\n');
 		w.startElement("script", null);
@@ -74,7 +82,7 @@ public class IncludeResource {
 		w.append('\n');
 	}
 
-	public static boolean isResourceIncluded(final FacesContext context, final String resource)
+	private static boolean isResourceIncluded(final FacesContext context, final String resource)
 			throws IOException {
 
 		final HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();

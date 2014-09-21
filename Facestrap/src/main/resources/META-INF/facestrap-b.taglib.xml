@@ -6,6 +6,98 @@
     <namespace>http://thjug.com/facestrap/ui</namespace>
 
     <tag>
+        <tag-name>bootstrapcss</tag-name>
+        <component>
+            <component-type>UIBootstrapCSS</component-type>
+        </component>
+
+        <attribute>
+            <name>rendered</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+            <description>Render Flag</description>
+        </attribute>
+    </tag>
+
+    <tag>
+        <tag-name>bootstrapjs</tag-name>
+        <component>
+            <component-type>UIBootstrapJS</component-type>
+        </component>
+
+        <attribute>
+            <name>rendered</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+            <description>Render Flag</description>
+        </attribute>
+    </tag>
+
+    <tag>
+        <tag-name>link</tag-name>
+        <component>
+            <component-type>UILink</component-type>
+        </component>
+
+        <attribute>
+            <name>href</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>CSS URI</description>
+        </attribute>
+
+        <attribute>
+            <name>type</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>Default = "text/css"</description>
+        </attribute>
+
+        <attribute>
+            <name>rel</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>Default = "stylesheet"</description>
+        </attribute>
+
+        <attribute>
+            <name>rendered</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+            <description>Render Flag</description>
+        </attribute>
+    </tag>
+
+    <tag>
+        <tag-name>script</tag-name>
+        <component>
+            <component-type>UIScript</component-type>
+        </component>
+
+        <attribute>
+            <name>src</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>CSS URI</description>
+        </attribute>
+
+        <attribute>
+            <name>type</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>Default = "text/javascript"</description>
+        </attribute>
+
+        <attribute>
+            <name>rendered</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+            <description>Render Flag</description>
+        </attribute>
+    </tag>
+
+
+    <tag>
         <tag-name>div</tag-name>
         <component>
             <component-type>UIDiv</component-type>

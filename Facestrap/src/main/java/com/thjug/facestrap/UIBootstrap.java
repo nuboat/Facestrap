@@ -15,12 +15,11 @@
 package com.thjug.facestrap;
 
 import com.thjug.facestrap.define.Attribute;
-import com.thjug.facestrap.helper.IncludeResource;
+import static com.thjug.facestrap.define.Attribute.rendered;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.Arrays;
 import java.util.List;
-import javax.faces.component.UIComponent;
 import javax.faces.component.UIComponentBase;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
@@ -37,7 +36,9 @@ public abstract class UIBootstrap extends UIComponentBase {
 
 	@Override
 	public void encodeBegin(final FacesContext context) throws IOException {
-		IncludeResource.includeCss(context, "css/bootstrap.min.css", "bootstrap");
+		if ((Boolean) getAttributes().get(rendered.toString()) == false) {
+			return;
+		}
 
 		final ResponseWriter writer = context.getResponseWriter();
 		writer.startElement(getRootElement(), this);
@@ -46,22 +47,17 @@ public abstract class UIBootstrap extends UIComponentBase {
 		if (getAttributes().get("css") != null) {
 			addElement(writer, "class", getAttributes().get("css"));
 		}
-		super.encodeEnd(context);
+		super.encodeBegin(context);
 	}
 
 	@Override
 	public void encodeEnd(final FacesContext context) throws IOException {
+		if ((Boolean) getAttributes().get(rendered.toString()) == false) {
+			return;
+		}
+
 		context.getResponseWriter().endElement(getRootElement());
 		super.encodeEnd(context);
-	}
-
-	protected void addChild(final ResponseWriter writer, final UIComponent c)
-			throws UncheckedIOException {
-		try {
-			writer.write(c.toString());
-		} catch (final IOException e) {
-			throw new UncheckedIOException(e);
-		}
 	}
 
 	protected void addElement(final ResponseWriter writer, final String name, final Object value)
