@@ -77,7 +77,7 @@ public class IncludeResource {
 		w.write('\n');
 		w.startElement("script", null);
 		w.writeAttribute("type", "text/javascript", null);
-		w.writeAttribute("href", r.getRequestPath(), null);
+		w.writeAttribute("src", r.getRequestPath(), null);
 		w.endElement("script");
 		w.append('\n');
 	}

@@ -18,17 +18,20 @@ import com.thjug.facestrap.define.Attribute;
 import static com.thjug.facestrap.define.Attribute.rendered;
 import java.io.IOException;
 import java.io.UncheckedIOException;
-import java.util.Arrays;
 import java.util.List;
 import javax.faces.component.UIComponentBase;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
  * @author nuboat
  */
 public abstract class UIBootstrap extends UIComponentBase {
+
+	private static final Logger LOG = LoggerFactory.getLogger(UIBootstrap.class);
 
 	protected abstract String getRootElement();
 
@@ -42,8 +45,9 @@ public abstract class UIBootstrap extends UIComponentBase {
 
 		final ResponseWriter writer = context.getResponseWriter();
 		writer.startElement(getRootElement(), this);
-		Arrays.asList(getUIAttribute()).stream().
-				forEach(k -> addElement(writer, k.toString(), getAttributes().get(k.toString())));
+		getUIAttribute()
+				.stream()
+				.forEach(k -> addElement(writer, k.toString(), getAttributes().get(k.toString())));
 		if (getAttributes().get("css") != null) {
 			addElement(writer, "class", getAttributes().get("css"));
 		}

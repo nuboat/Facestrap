@@ -15,9 +15,14 @@
 package com.thjug.facestrap;
 
 import com.thjug.facestrap.define.Attribute;
+import static com.thjug.facestrap.define.Attribute.alt;
+import static com.thjug.facestrap.define.Attribute.css;
+import static com.thjug.facestrap.define.Attribute.id;
 import static com.thjug.facestrap.define.Attribute.rendered;
+import static com.thjug.facestrap.define.Attribute.responsive;
+import static com.thjug.facestrap.define.Attribute.shape;
 import static com.thjug.facestrap.define.Attribute.src;
-import static com.thjug.facestrap.define.Attribute.type;
+import static com.thjug.facestrap.define.Attribute.style;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -31,37 +36,40 @@ import org.slf4j.LoggerFactory;
  *
  * @author nuboat
  */
-@FacesComponent("UIScript")
-public class UIScript extends UIBootstrap {
+@FacesComponent("UIImg")
+public class UIImg extends UIBootstrap {
 
-	private static final Logger LOG = LoggerFactory.getLogger(UIScript.class);
+	private static final Logger LOG = LoggerFactory.getLogger(UIImg.class);
 
 	@Override
 	protected List<Attribute> getUIAttribute() {
-		return Arrays.asList(type, src);
+		return Arrays.asList(id, src, alt, style);
 	}
 
 	@Override
 	public void encodeBegin(final FacesContext context) throws IOException {
-		if ((Boolean) getAttributes().get(rendered.toString()) == false) {
+		if ((Boolean) getAttributes().getOrDefault(rendered.toString(), true) == false) {
 			return;
 		}
 
-		if (!getAttributes().containsKey(type.toString())) {
-			getAttributes().put(type.toString(), "text/javascript");
+		if ((Boolean) getAttributes().getOrDefault(responsive.toString(), false)) {
+			getAttributes().put(css.toString(), getAttributes().getOrDefault(css.toString(), "") + "img-responsive");
+		}
+
+		if (getAttributes().containsKey(shape.toString())) {
+			getAttributes().put(css.toString(), getAttributes().getOrDefault(css.toString(), "") + " " + getAttributes().get(shape.toString()).toString());
 		}
 
 		if (getAttributes().containsKey(src.toString())) {
 			final HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
 			getAttributes().put(src.toString(), request.getContextPath() + getAttributes().get(src.toString()));
 		}
-
 		super.encodeBegin(context);
 	}
 
 	@Override
 	protected String getRootElement() {
-		return "link";
+		return "img";
 	}
 
 	@Override

@@ -15,7 +15,7 @@
             <name>rendered</name>
             <required>false</required>
             <type>java.lang.Boolean</type>
-            <description>Render Flag</description>
+            <description>Default = true</description>
         </attribute>
     </tag>
 
@@ -29,7 +29,7 @@
             <name>rendered</name>
             <required>false</required>
             <type>java.lang.Boolean</type>
-            <description>Render Flag</description>
+            <description>Default = true</description>
         </attribute>
     </tag>
 
@@ -64,7 +64,7 @@
             <name>rendered</name>
             <required>false</required>
             <type>java.lang.Boolean</type>
-            <description>Render Flag</description>
+            <description>Default = true</description>
         </attribute>
     </tag>
 
@@ -78,24 +78,77 @@
             <name>src</name>
             <required>false</required>
             <type>java.lang.String</type>
-            <description>CSS URI</description>
+            <description>Resource URI</description>
         </attribute>
-
         <attribute>
             <name>type</name>
             <required>false</required>
             <type>java.lang.String</type>
             <description>Default = "text/javascript"</description>
         </attribute>
-
         <attribute>
             <name>rendered</name>
             <required>false</required>
             <type>java.lang.Boolean</type>
-            <description>Render Flag</description>
+            <description>Default = true</description>
         </attribute>
     </tag>
 
+    <tag>
+        <tag-name>img</tag-name>
+        <component>
+            <component-type>UIImg</component-type>
+        </component>
+
+        <attribute>
+            <name>id</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>Document ID</description>
+        </attribute>
+        <attribute>
+            <name>src</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+            <description>Image URI</description>
+        </attribute>
+        <attribute>
+            <name>alt</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>Text replace</description>
+        </attribute>
+        <attribute>
+            <name>css</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description></description>
+        </attribute>
+        <attribute>
+            <name>style</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description></description>
+        </attribute>
+        <attribute>
+            <name>shape</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>["img-rounded", "img-circle", "img-thumbnail"]</description>
+        </attribute>
+        <attribute>
+            <name>responsive</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+            <description>Default = false</description>
+        </attribute>
+        <attribute>
+            <name>rendered</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+            <description>Default = true</description>
+        </attribute>
+    </tag>
 
     <tag>
         <tag-name>div</tag-name>
@@ -105,7 +158,7 @@
 
         <attribute>
             <name>id</name>
-            <required>true</required>
+            <required>false</required>
             <type>java.lang.String</type>
             <description>Document ID</description>
         </attribute>
@@ -125,7 +178,7 @@
             <name>rendered</name>
             <required>false</required>
             <type>java.lang.Boolean</type>
-            <description>Render Flag</description>
+            <description>Default = true</description>
         </attribute>
     </tag>
 
@@ -137,7 +190,7 @@
 
         <attribute>
             <name>id</name>
-            <required>true</required>
+            <required>false</required>
             <type>java.lang.String</type>
             <description>Document ID</description>
         </attribute>
@@ -157,7 +210,7 @@
             <name>rendered</name>
             <required>false</required>
             <type>java.lang.Boolean</type>
-            <description>Render Flag</description>
+            <description>Default = true</description>
         </attribute>
     </tag>
 </facelet-taglib>

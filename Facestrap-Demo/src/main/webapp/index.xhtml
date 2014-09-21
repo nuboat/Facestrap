@@ -10,13 +10,23 @@
             <b:bootstrapcss />
         </h:head>
         <h:body>
-            <br />
-            <b:div id="row1" css="well container" style="color: blue">Div 1</b:div>
+            <b:div id="row" css="container">
+                <br />
+                <b:div id="row1" css="well" style="color: green">Facestrap Project</b:div>
 
-            <b:div id="row2" css="well container">
-                <b:span id="rowa" style="color: blue">Span A</b:span>
+                <b:div id="row2" css="well">
+                    <b:span id="rowa" style="color: green">Developer: nuboat in wonderland</b:span>
+                </b:div>
+
+                <b:div id="row3" css="well" rendered="false">You should not see this.</b:div>
+
+                <b:div id="row4" css="well">
+                    <b:div id="row4_1" style="color: green">Gallery</b:div><br />
+                    <b:img id="img1" src="/images/img1.jpg" alt="img1" shape="img-rounded" style="width: 140px; height: 140px; margin-right: 24px;" />
+                    <b:img id="img2" src="/images/img2.jpg" alt="img2" shape="img-circle" style="width: 140px; height: 140px; margin-right: 24px;" />
+                    <b:img id="img3" src="/images/img3.jpg" alt="img3" shape="img-thumbnail" style="width: 140px; height: 140px; margin-right: 24px;" />
+                </b:div>
             </b:div>
-
             <b:bootstrapjs />
         </h:body>
     </f:view>

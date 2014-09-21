@@ -55,9 +55,9 @@ public class UILink extends UIBootstrap {
 			getAttributes().put(rel.toString(), "stylesheet");
 		}
 
-		if (getAttributes().containsKey(type.toString())) {
+		if (getAttributes().containsKey(href.toString())) {
 			final HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
-			getAttributes().put(href.toString(), request.getServletPath() + getAttributes().get(href.toString()));
+			getAttributes().put(href.toString(), request.getContextPath() + getAttributes().get(href.toString()));
 		}
 		super.encodeBegin(context);
 	}
