@@ -29,6 +29,7 @@ public class UIBootstrapJS extends UIComponentBase {
 
 	@Override
 	public void encodeBegin(final FacesContext context) throws IOException {
+		IncludeResource.includeJQuery(context);
 		IncludeResource.includeJS(context);
 		super.encodeBegin(context);
 	}

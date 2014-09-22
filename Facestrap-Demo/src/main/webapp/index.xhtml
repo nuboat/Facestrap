@@ -10,7 +10,16 @@
             <b:bootstrapcss />
         </h:head>
         <h:body>
-            <b:div id="row" css="container">
+			<b:navbar id="bar" css="navbar-fixed-top">
+				<b:navbarhead>
+					<a class="navbar-brand" href="#">Facestrap</a>
+				</b:navbarhead>
+				<b:navbarbody>
+					<li class="active"><a href="#">HOME</a></li>
+					<li><a href="#">ABOUT US</a></li>
+				</b:navbarbody>
+			</b:navbar>
+            <b:div id="row" css="container" style="margin-top: 40px;">
                 <br />
                 <b:div id="row1" css="well" style="color: green">Facestrap Project</b:div>
 
@@ -21,10 +30,12 @@
                 <b:div id="row3" css="well" rendered="false">You should not see this.</b:div>
 
                 <b:div id="row4" css="well">
-                    <b:div id="row4_1" style="color: green">Gallery</b:div><br />
-                    <b:img id="img1" src="/images/img1.jpg" alt="img1" shape="img-rounded" style="width: 140px; height: 140px; margin-right: 24px;" />
-                    <b:img id="img2" src="/images/img2.jpg" alt="img2" shape="img-circle" style="width: 140px; height: 140px; margin-right: 24px;" />
-                    <b:img id="img3" src="/images/img3.jpg" alt="img3" shape="img-thumbnail" style="width: 140px; height: 140px; margin-right: 24px;" />
+                    <b:img id="img1" src="/images/img1.jpg" alt="img1" shape="img-rounded" 
+						   style="width: 140px; height: 140px; margin-right: 24px;" />
+                    <b:img id="img2" src="/images/img2.jpg" alt="img2" shape="img-circle" 
+						   style="width: 140px; height: 140px; margin-right: 24px;" />
+                    <b:img id="img3" src="/images/img3.jpg" alt="img3" shape="img-thumbnail" 
+						   style="width: 140px; height: 140px; margin-right: 24px;" />
                 </b:div>
             </b:div>
             <b:bootstrapjs />

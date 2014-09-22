@@ -213,4 +213,123 @@
             <description>Default = true</description>
         </attribute>
     </tag>
+	
+	<tag>
+        <tag-name>navbar</tag-name>
+        <component>
+            <component-type>UINavbar</component-type>
+        </component>
+
+        <attribute>
+            <name>id</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>Document ID</description>
+        </attribute>
+		<attribute>
+            <name>mode</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>["navbar-fixed-top", "navbar-fixed-bottom", "navbar-static-top"]</description>
+        </attribute>
+        <attribute>
+            <name>css</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>CSS Class</description>
+        </attribute>
+        <attribute>
+            <name>style</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>Style</description>
+        </attribute>
+		<attribute>
+            <name>role</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description></description>
+        </attribute>
+		<attribute>
+            <name>responsive</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+            <description>Default = false</description>
+        </attribute>
+		<attribute>
+            <name>inverse</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+            <description>Default = false</description>
+        </attribute>
+        <attribute>
+            <name>rendered</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+            <description>Default = true</description>
+        </attribute>
+    </tag>
+	
+	<tag>
+        <tag-name>navbarhead</tag-name>
+        <component>
+            <component-type>UINavbarHeader</component-type>
+        </component>
+
+        <attribute>
+            <name>css</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>CSS Class</description>
+        </attribute>
+        <attribute>
+            <name>style</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>Style</description>
+        </attribute>
+		<attribute>
+            <name>responsive</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+            <description>Default = false</description>
+        </attribute>
+        <attribute>
+            <name>rendered</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+            <description>Default = true</description>
+        </attribute>
+    </tag>
+	<tag>
+        <tag-name>navbarbody</tag-name>
+        <component>
+            <component-type>UINavbarBody</component-type>
+        </component>
+
+        <attribute>
+            <name>css</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>CSS Class</description>
+        </attribute>
+        <attribute>
+            <name>style</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <description>Style</description>
+        </attribute>
+		<attribute>
+            <name>responsive</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+            <description>Default = false</description>
+        </attribute>
+        <attribute>
+            <name>rendered</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+            <description>Default = true</description>
+        </attribute>
+    </tag>
 </facelet-taglib>

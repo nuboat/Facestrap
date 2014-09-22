@@ -39,6 +39,10 @@ public class IncludeResource {
 		includeJS(context, "js/bootstrap.min.js", "bootstrap");
 	}
 
+	public static void includeJQuery(final FacesContext context) throws IOException {
+		includeJS(context, "jquery.min.js", "jquery");
+	}
+
 	private static void includeCSS(final FacesContext context, final String resource, final String library)
 			throws IOException {
 
