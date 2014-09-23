@@ -14,7 +14,6 @@
  */
 package com.thjug.facestrap;
 
-import com.thjug.facestrap.define.Attribute;
 import static com.thjug.facestrap.define.Attribute.rendered;
 import static com.thjug.facestrap.define.Attribute.src;
 import static com.thjug.facestrap.define.Attribute.type;
@@ -37,23 +36,23 @@ public class UIScript extends UIBootstrap {
 	private static final Logger LOG = LoggerFactory.getLogger(UIScript.class);
 
 	@Override
-	protected List<Attribute> getUIAttribute() {
+	protected List<String> getUIAttributes() {
 		return Arrays.asList(type, src);
 	}
 
 	@Override
 	public void encodeBegin(final FacesContext context) throws IOException {
-		if ((Boolean) getAttributes().get(rendered.toString()) == false) {
+		if ((Boolean) getAttributes().get(rendered) == false) {
 			return;
 		}
 
-		if (!getAttributes().containsKey(type.toString())) {
-			getAttributes().put(type.toString(), "text/javascript");
+		if (!getAttributes().containsKey(type)) {
+			getAttributes().put(type, "text/javascript");
 		}
 
-		if (getAttributes().containsKey(src.toString())) {
+		if (getAttributes().containsKey(src)) {
 			final HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
-			getAttributes().put(src.toString(), request.getContextPath() + getAttributes().get(src.toString()));
+			getAttributes().put(src, request.getContextPath() + getAttributes().get(src));
 		}
 
 		super.encodeBegin(context);

@@ -35,18 +35,18 @@ public class UINavbarHeader extends UIBootstrap {
 	private static final Logger LOG = LoggerFactory.getLogger(UINavbarHeader.class);
 
 	@Override
-	protected List<Attribute> getUIAttribute() {
+	protected List<String> getUIAttributes() {
 		return null;
 	}
 
 	@Override
 	public void encodeBegin(final FacesContext context) throws IOException {
-		if ((Boolean) getAttributes().getOrDefault(rendered.toString(), true) == false) {
+		if ((Boolean) getAttributes().getOrDefault(rendered, true) == false) {
 			return;
 		}
 
-		if (!getAttributes().containsKey(responsive.toString())) {
-			getAttributes().put(responsive.toString(), Boolean.FALSE);
+		if (!getAttributes().containsKey(responsive)) {
+			getAttributes().put(responsive, Boolean.FALSE);
 		}
 
 		final ResponseWriter writer = context.getResponseWriter();
@@ -75,7 +75,7 @@ public class UINavbarHeader extends UIBootstrap {
 
 	@Override
 	public void encodeEnd(final FacesContext context) throws IOException {
-		if ((Boolean) getAttributes().get(rendered.toString()) == false) {
+		if ((Boolean) getAttributes().get(rendered) == false) {
 			return;
 		}
 

@@ -25,7 +25,7 @@ import java.util.List;
 public abstract class UIBootstrapForm extends UIBootstrap {
 
 	@Override
-	protected List<Attribute> getUIAttribute() {
+	protected List<String> getUIAttributes() {
 		return Arrays.asList(Attribute.id, Attribute.style, Attribute.type, Attribute.value);
 	}
 

@@ -42,43 +42,43 @@ public class UINavbar extends UIBootstrap {
 	private static final Logger LOG = LoggerFactory.getLogger(UINavbar.class);
 
 	@Override
-	protected List<Attribute> getUIAttribute() {
+	protected List<String> getUIAttributes() {
 		return Arrays.asList(id, style, role);
 	}
 
 	@Override
 	public void encodeBegin(final FacesContext context) throws IOException {
-		if ((Boolean) getAttributes().getOrDefault(rendered.toString(), true) == false) {
+		if ((Boolean) getAttributes().getOrDefault(rendered, true) == false) {
 			return;
 		}
 
-		if (!getAttributes().containsKey(inverse.toString())) {
-			getAttributes().put(inverse.toString(), Boolean.FALSE);
+		if (!getAttributes().containsKey(inverse)) {
+			getAttributes().put(inverse, Boolean.FALSE);
 		}
 
-		if (!getAttributes().containsKey(responsive.toString())) {
-			getAttributes().put(responsive.toString(), Boolean.FALSE);
+		if (!getAttributes().containsKey(responsive)) {
+			getAttributes().put(responsive, Boolean.FALSE);
 		}
 
-		if (!getAttributes().containsKey(role.toString())) {
-			getAttributes().put(role.toString(), "navigation");
+		if (!getAttributes().containsKey(role)) {
+			getAttributes().put(role, "navigation");
 		}
 
-		getAttributes().put(css.toString(), "navbar " +
-				(((Boolean)getAttributes().get(inverse.toString())) ? "navbar-inverse " : "navbar-default ") +
-				getAttributes().getOrDefault(mode.toString(), "") +
-				getAttributes().getOrDefault(css.toString(), "") );
+		getAttributes().put(css, "navbar " +
+				(((Boolean)getAttributes().get(inverse)) ? "navbar-inverse " : "navbar-default ") +
+				getAttributes().getOrDefault(mode, "") +
+				getAttributes().getOrDefault(css, "") );
 
 		super.encodeBegin(context);
 
 		final ResponseWriter writer = context.getResponseWriter();
 		writer.startElement("div", this);
-		addElement(writer, "class", ((Boolean)getAttributes().get(responsive.toString())) ? "container-fluid" : "container");
+		addElement(writer, "class", ((Boolean)getAttributes().get(responsive)) ? "container-fluid" : "container");
 	}
 
 	@Override
 	public void encodeEnd(final FacesContext context) throws IOException {
-		if ((Boolean) getAttributes().get(rendered.toString()) == false) {
+		if ((Boolean) getAttributes().get(rendered) == false) {
 			return;
 		}
 

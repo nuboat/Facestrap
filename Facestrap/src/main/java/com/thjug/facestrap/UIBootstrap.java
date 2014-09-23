@@ -14,7 +14,6 @@
  */
 package com.thjug.facestrap;
 
-import com.thjug.facestrap.define.Attribute;
 import static com.thjug.facestrap.define.Attribute.rendered;
 import java.io.IOException;
 import java.io.UncheckedIOException;
@@ -35,19 +34,19 @@ public abstract class UIBootstrap extends UIComponentBase {
 
 	protected abstract String getRootElement();
 
-	protected abstract List<Attribute> getUIAttribute();
+	protected abstract List<String> getUIAttributes();
 
 	@Override
 	public void encodeBegin(final FacesContext context) throws IOException {
-		if ((Boolean) getAttributes().get(rendered.toString()) == false) {
+		if ((Boolean) getAttributes().get(rendered) == false) {
 			return;
 		}
 
 		final ResponseWriter writer = context.getResponseWriter();
 		writer.startElement(getRootElement(), this);
-		getUIAttribute()
+		getUIAttributes()
 				.stream()
-				.forEach(k -> addElement(writer, k.toString(), getAttributes().get(k.toString())));
+				.forEach(k -> addElement(writer, k, getAttributes().get(k)));
 		if (getAttributes().get("css") != null) {
 			addElement(writer, "class", getAttributes().get("css"));
 		}
@@ -56,7 +55,7 @@ public abstract class UIBootstrap extends UIComponentBase {
 
 	@Override
 	public void encodeEnd(final FacesContext context) throws IOException {
-		if ((Boolean) getAttributes().get(rendered.toString()) == false) {
+		if ((Boolean) getAttributes().get(rendered) == false) {
 			return;
 		}
 
@@ -70,7 +69,7 @@ public abstract class UIBootstrap extends UIComponentBase {
 			return;
 		}
 		try {
-			writer.writeAttribute(name, value.toString(), null);
+			writer.writeAttribute(name, value, null);
 		} catch (final IOException e) {
 			throw new UncheckedIOException(e);
 		}

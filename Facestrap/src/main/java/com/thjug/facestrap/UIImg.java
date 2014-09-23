@@ -15,14 +15,7 @@
 package com.thjug.facestrap;
 
 import com.thjug.facestrap.define.Attribute;
-import static com.thjug.facestrap.define.Attribute.alt;
-import static com.thjug.facestrap.define.Attribute.css;
-import static com.thjug.facestrap.define.Attribute.id;
-import static com.thjug.facestrap.define.Attribute.rendered;
-import static com.thjug.facestrap.define.Attribute.responsive;
-import static com.thjug.facestrap.define.Attribute.shape;
-import static com.thjug.facestrap.define.Attribute.src;
-import static com.thjug.facestrap.define.Attribute.style;
+import static com.thjug.facestrap.define.Attribute.*;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -42,27 +35,27 @@ public class UIImg extends UIBootstrap {
 	private static final Logger LOG = LoggerFactory.getLogger(UIImg.class);
 
 	@Override
-	protected List<Attribute> getUIAttribute() {
+	protected List<String> getUIAttributes() {
 		return Arrays.asList(id, src, alt, style);
 	}
 
 	@Override
 	public void encodeBegin(final FacesContext context) throws IOException {
-		if ((Boolean) getAttributes().getOrDefault(rendered.toString(), true) == false) {
+		if ((Boolean) getAttributes().getOrDefault(rendered, true) == false) {
 			return;
 		}
 
-		if ((Boolean) getAttributes().getOrDefault(responsive.toString(), false)) {
-			getAttributes().put(css.toString(), getAttributes().getOrDefault(css.toString(), "") + "img-responsive");
+		if ((Boolean) getAttributes().getOrDefault(responsive, false)) {
+			getAttributes().put(css, getAttributes().getOrDefault(css, "") + "img-responsive");
 		}
 
-		if (getAttributes().containsKey(shape.toString())) {
-			getAttributes().put(css.toString(), getAttributes().getOrDefault(css.toString(), "") + " " + getAttributes().get(shape.toString()).toString());
+		if (getAttributes().containsKey(shape)) {
+			getAttributes().put(css, getAttributes().getOrDefault(css, "") + " " + getAttributes().get(shape));
 		}
 
-		if (getAttributes().containsKey(src.toString())) {
+		if (getAttributes().containsKey(src)) {
 			final HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
-			getAttributes().put(src.toString(), request.getContextPath() + getAttributes().get(src.toString()));
+			getAttributes().put(src, request.getContextPath() + getAttributes().get(src));
 		}
 		super.encodeBegin(context);
 	}

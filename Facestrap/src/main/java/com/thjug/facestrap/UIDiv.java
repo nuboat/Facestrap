@@ -14,7 +14,7 @@
  */
 package com.thjug.facestrap;
 
-import com.thjug.facestrap.define.Attribute;
+import static com.thjug.facestrap.define.Attribute.*;
 import java.util.Arrays;
 import java.util.List;
 import javax.faces.component.FacesComponent;
@@ -31,8 +31,8 @@ public class UIDiv extends UIBootstrap {
 	private static final Logger LOG = LoggerFactory.getLogger(UIDiv.class);
 
 	@Override
-	protected List<Attribute> getUIAttribute() {
-		return Arrays.asList(Attribute.id, Attribute.style);
+	protected List<String> getUIAttributes() {
+		return Arrays.asList(id, style);
 	}
 
 	@Override

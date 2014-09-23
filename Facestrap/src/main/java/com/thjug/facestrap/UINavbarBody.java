@@ -39,25 +39,25 @@ public class UINavbarBody extends UIBootstrap {
 	private static final Logger LOG = LoggerFactory.getLogger(UINavbarBody.class);
 
 	@Override
-	protected List<Attribute> getUIAttribute() {
+	protected List<String> getUIAttributes() {
 		return Arrays.asList(id, style, role);
 	}
 
 	@Override
 	public void encodeBegin(final FacesContext context) throws IOException {
-		if ((Boolean) getAttributes().getOrDefault(rendered.toString(), true) == false) {
+		if ((Boolean) getAttributes().getOrDefault(rendered, true) == false) {
 			return;
 		}
 
-		if (!getAttributes().containsKey(responsive.toString())) {
-			getAttributes().put(responsive.toString(), Boolean.FALSE);
+		if (!getAttributes().containsKey(responsive)) {
+			getAttributes().put(responsive, Boolean.FALSE);
 		}
 
 		final ResponseWriter writer = context.getResponseWriter();
 		writer.startElement(getRootElement(), this);
-		getUIAttribute()
+		getUIAttributes()
 				.stream()
-				.forEach(k -> addElement(writer, k.toString(), getAttributes().get(k.toString())));
+				.forEach(k -> addElement(writer, k, getAttributes().get(k)));
 		addElement(writer, "class", "collapse navbar-collapse");
 	}
 

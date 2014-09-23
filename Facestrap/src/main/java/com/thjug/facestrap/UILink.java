@@ -38,26 +38,26 @@ public class UILink extends UIBootstrap {
 	private static final Logger LOG = LoggerFactory.getLogger(UILink.class);
 
 	@Override
-	protected List<Attribute> getUIAttribute() {
+	protected List<String> getUIAttributes() {
 		return Arrays.asList(type, rel, href);
 	}
 
 	@Override
 	public void encodeBegin(final FacesContext context) throws IOException {
-		if ((Boolean) getAttributes().get(rendered.toString()) == false) {
+		if ((Boolean) getAttributes().get(rendered) == false) {
 			return;
 		}
 
-		if (!getAttributes().containsKey(type.toString())) {
-			getAttributes().put(type.toString(), "text/css");
+		if (!getAttributes().containsKey(type)) {
+			getAttributes().put(type, "text/css");
 		}
-		if (!getAttributes().containsKey(rel.toString())) {
-			getAttributes().put(rel.toString(), "stylesheet");
+		if (!getAttributes().containsKey(rel)) {
+			getAttributes().put(rel, "stylesheet");
 		}
 
-		if (getAttributes().containsKey(href.toString())) {
+		if (getAttributes().containsKey(href)) {
 			final HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
-			getAttributes().put(href.toString(), request.getContextPath() + getAttributes().get(href.toString()));
+			getAttributes().put(href, request.getContextPath() + getAttributes().get(href));
 		}
 		super.encodeBegin(context);
 	}

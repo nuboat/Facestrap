@@ -35,32 +35,32 @@ public class UIDropdown extends UIBootstrap {
 	private static final Logger LOG = LoggerFactory.getLogger(UIDropdown.class);
 
 	@Override
-	protected List<Attribute> getUIAttribute() {
+	protected List<String> getUIAttributes() {
 		return Arrays.asList(id, style, role);
 	}
 
 	@Override
 	public void encodeBegin(final FacesContext context) throws IOException {
-		if ((Boolean) getAttributes().getOrDefault(rendered.toString(), true) == false) {
+		if ((Boolean) getAttributes().getOrDefault(rendered, true) == false) {
 			return;
 		}
 
-		if (!getAttributes().containsKey(responsive.toString())) {
-			getAttributes().put(responsive.toString(), Boolean.FALSE);
+		if (!getAttributes().containsKey(responsive)) {
+			getAttributes().put(responsive, Boolean.FALSE);
 		}
 
 		final ResponseWriter writer = context.getResponseWriter();
 		writer.startElement(getRootElement(), this);
-		addElement(writer, "class", "dropdown " + getAttributes().getOrDefault(css.toString(), "").toString());
-		getUIAttribute()
+		addElement(writer, "class", "dropdown " + getAttributes().getOrDefault(css, ""));
+		getUIAttributes()
 				.stream()
-				.forEach(k -> addElement(writer, k.toString(), getAttributes().get(k.toString())));
+				.forEach(k -> addElement(writer, k, getAttributes().get(k)));
 
 		writer.startElement("a", this);
-		addElement(writer, href.toString(), "#");
+		addElement(writer, href, "#");
 		addElement(writer, "data-toggle", "dropdown");
 		addElement(writer, "class", "dropdown-toggle");
-		writer.write(getAttributes().get(value.toString()).toString());
+		writer.write(getAttributes().get(value).toString());
 		writer.startElement("span", this);
 		addElement(writer, "class", "caret");
 		writer.endElement("span");
@@ -69,7 +69,7 @@ public class UIDropdown extends UIBootstrap {
 
 	@Override
 	public void encodeEnd(final FacesContext context) throws IOException {
-		if ((Boolean) getAttributes().get(rendered.toString()) == false) {
+		if ((Boolean) getAttributes().get(rendered) == false) {
 			return;
 		}
 

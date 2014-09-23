@@ -18,8 +18,22 @@ package com.thjug.facestrap.define;
  *
  * @author nuboat
  */
-public enum Attribute {
+public class Attribute {
 
-	rendered,
-	id, css, style, type, value, rel, href, src, alt, shape, responsive, inverse, role, mode,
+	public static final String rendered = "rendered";
+	public static final String id = "id";
+	public static final String css = "css";
+	public static final String style = "style";
+	public static final String type = "type";
+	public static final String value = "value";
+	public static final String rel = "rel";
+	public static final String href = "href";
+	public static final String src = "src";
+	public static final String alt = "alt";
+	public static final String inverse = "inverse";
+	public static final String role = "role";
+
+	public static final String mode = "mode";
+	public static final String shape = "shape";
+	public static final String responsive = "responsive";
 }
