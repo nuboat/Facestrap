@@ -35,7 +35,7 @@ public class IncludeResource {
 		includeCSS(context, "css/bootstrap.min.css", "bootstrap");
 	}
 
-	public static void includeJS(final FacesContext context) throws IOException {
+	public static void includeBootstrapJS(final FacesContext context) throws IOException {
 		includeJS(context, "js/bootstrap.min.js", "bootstrap");
 	}
 

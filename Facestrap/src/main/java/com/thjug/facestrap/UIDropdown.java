@@ -15,11 +15,7 @@
 package com.thjug.facestrap;
 
 import com.thjug.facestrap.define.Attribute;
-import static com.thjug.facestrap.define.Attribute.id;
-import static com.thjug.facestrap.define.Attribute.rendered;
-import static com.thjug.facestrap.define.Attribute.responsive;
-import static com.thjug.facestrap.define.Attribute.role;
-import static com.thjug.facestrap.define.Attribute.style;
+import static com.thjug.facestrap.define.Attribute.*;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -33,10 +29,10 @@ import org.slf4j.LoggerFactory;
  *
  * @author nuboat
  */
-@FacesComponent("UINavbarBody")
-public class UINavbarBody extends UIBootstrap {
+@FacesComponent("UIDropdown")
+public class UIDropdown extends UIBootstrap {
 
-	private static final Logger LOG = LoggerFactory.getLogger(UINavbarBody.class);
+	private static final Logger LOG = LoggerFactory.getLogger(UIDropdown.class);
 
 	@Override
 	protected List<Attribute> getUIAttribute() {
@@ -55,15 +51,34 @@ public class UINavbarBody extends UIBootstrap {
 
 		final ResponseWriter writer = context.getResponseWriter();
 		writer.startElement(getRootElement(), this);
+		addElement(writer, "class", "dropdown " + getAttributes().getOrDefault(css.toString(), "").toString());
 		getUIAttribute()
 				.stream()
 				.forEach(k -> addElement(writer, k.toString(), getAttributes().get(k.toString())));
-		addElement(writer, "class", "collapse navbar-collapse");
+
+		writer.startElement("a", this);
+		addElement(writer, href.toString(), "#");
+		addElement(writer, "data-toggle", "dropdown");
+		addElement(writer, "class", "dropdown-toggle");
+		writer.write(getAttributes().get(value.toString()).toString());
+		writer.startElement("span", this);
+		addElement(writer, "class", "caret");
+		writer.endElement("span");
+		writer.endElement("a");
+	}
+
+	@Override
+	public void encodeEnd(final FacesContext context) throws IOException {
+		if ((Boolean) getAttributes().get(rendered.toString()) == false) {
+			return;
+		}
+
+		super.encodeEnd(context);
 	}
 
 	@Override
 	protected String getRootElement() {
-		return "div";
+		return "li";
 	}
 
 	@Override

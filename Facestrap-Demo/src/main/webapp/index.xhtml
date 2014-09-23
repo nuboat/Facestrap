@@ -11,12 +11,25 @@
         </h:head>
         <h:body>
 			<b:navbar id="bar" css="navbar-fixed-top">
-				<b:navbarhead>
+				<b:navbarhead >
 					<a class="navbar-brand" href="#">Facestrap</a>
 				</b:navbarhead>
 				<b:navbarbody>
-					<li class="active"><a href="#">HOME</a></li>
-					<li><a href="#">ABOUT US</a></li>
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">HOME</a></li>
+						<li><a href="#">ABOUT US</a></li>
+					</ul>
+					
+					<ul class="nav navbar-nav navbar-right">
+						<b:dropdown value="PEERAPAT A">
+							<ul class="dropdown-menu " role="menu">
+								<li role="presentation" class="dropdown-header">Profile</li>
+								<li role="presentation" class="dropdown-header">Settings</li>
+								<li role="presentation" class="divider"></li>
+								<li role="presentation" class="dropdown-header">Sign Off</li>
+							</ul>
+						</b:dropdown>
+					</ul>
 				</b:navbarbody>
 			</b:navbar>
             <b:div id="row" css="container" style="margin-top: 40px;">
@@ -38,6 +51,7 @@
 						   style="width: 140px; height: 140px; margin-right: 24px;" />
                 </b:div>
             </b:div>
+			<b:jqueryjs />
             <b:bootstrapjs />
         </h:body>
     </f:view>

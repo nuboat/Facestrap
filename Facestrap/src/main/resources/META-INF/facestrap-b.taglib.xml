@@ -1,335 +1,411 @@
 <facelet-taglib version="2.0"
-                xmlns="http://java.sun.com/xml/ns/javaee"
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facelettaglibrary_2_0.xsd">
+				xmlns="http://java.sun.com/xml/ns/javaee"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facelettaglibrary_2_0.xsd">
 
-    <namespace>http://thjug.com/facestrap/ui</namespace>
+	<namespace>http://thjug.com/facestrap/ui</namespace>
 
-    <tag>
-        <tag-name>bootstrapcss</tag-name>
-        <component>
-            <component-type>UIBootstrapCSS</component-type>
-        </component>
+	<tag>
+		<tag-name>jqueryjs</tag-name>
+		<component>
+			<component-type>UIJQueryJS</component-type>
+		</component>
 
-        <attribute>
-            <name>rendered</name>
-            <required>false</required>
-            <type>java.lang.Boolean</type>
-            <description>Default = true</description>
-        </attribute>
-    </tag>
+		<attribute>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = true</description>
+		</attribute>
+	</tag>
+	<tag>
+		<tag-name>bootstrapcss</tag-name>
+		<component>
+			<component-type>UIBootstrapCSS</component-type>
+		</component>
 
-    <tag>
-        <tag-name>bootstrapjs</tag-name>
-        <component>
-            <component-type>UIBootstrapJS</component-type>
-        </component>
+		<attribute>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = true</description>
+		</attribute>
+	</tag>
 
-        <attribute>
-            <name>rendered</name>
-            <required>false</required>
-            <type>java.lang.Boolean</type>
-            <description>Default = true</description>
-        </attribute>
-    </tag>
+	<tag>
+		<tag-name>bootstrapjs</tag-name>
+		<component>
+			<component-type>UIBootstrapJS</component-type>
+		</component>
 
-    <tag>
-        <tag-name>link</tag-name>
-        <component>
-            <component-type>UILink</component-type>
-        </component>
+		<attribute>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = true</description>
+		</attribute>
+	</tag>
 
-        <attribute>
-            <name>href</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>CSS URI</description>
-        </attribute>
+	<tag>
+		<tag-name>link</tag-name>
+		<component>
+			<component-type>UILink</component-type>
+		</component>
 
-        <attribute>
-            <name>type</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>Default = "text/css"</description>
-        </attribute>
+		<attribute>
+			<name>href</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>CSS URI</description>
+		</attribute>
 
-        <attribute>
-            <name>rel</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>Default = "stylesheet"</description>
-        </attribute>
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Default = "text/css"</description>
+		</attribute>
 
-        <attribute>
-            <name>rendered</name>
-            <required>false</required>
-            <type>java.lang.Boolean</type>
-            <description>Default = true</description>
-        </attribute>
-    </tag>
+		<attribute>
+			<name>rel</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Default = "stylesheet"</description>
+		</attribute>
 
-    <tag>
-        <tag-name>script</tag-name>
-        <component>
-            <component-type>UIScript</component-type>
-        </component>
+		<attribute>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = true</description>
+		</attribute>
+	</tag>
 
-        <attribute>
-            <name>src</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>Resource URI</description>
-        </attribute>
-        <attribute>
-            <name>type</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>Default = "text/javascript"</description>
-        </attribute>
-        <attribute>
-            <name>rendered</name>
-            <required>false</required>
-            <type>java.lang.Boolean</type>
-            <description>Default = true</description>
-        </attribute>
-    </tag>
+	<tag>
+		<tag-name>script</tag-name>
+		<component>
+			<component-type>UIScript</component-type>
+		</component>
 
-    <tag>
-        <tag-name>img</tag-name>
-        <component>
-            <component-type>UIImg</component-type>
-        </component>
+		<attribute>
+			<name>src</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Resource URI</description>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Default = "text/javascript"</description>
+		</attribute>
+		<attribute>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = true</description>
+		</attribute>
+	</tag>
 
-        <attribute>
-            <name>id</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>Document ID</description>
-        </attribute>
-        <attribute>
-            <name>src</name>
-            <required>true</required>
-            <type>java.lang.String</type>
-            <description>Image URI</description>
-        </attribute>
-        <attribute>
-            <name>alt</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>Text replace</description>
-        </attribute>
-        <attribute>
-            <name>css</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description></description>
-        </attribute>
-        <attribute>
-            <name>style</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description></description>
-        </attribute>
-        <attribute>
-            <name>shape</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>["img-rounded", "img-circle", "img-thumbnail"]</description>
-        </attribute>
-        <attribute>
-            <name>responsive</name>
-            <required>false</required>
-            <type>java.lang.Boolean</type>
-            <description>Default = false</description>
-        </attribute>
-        <attribute>
-            <name>rendered</name>
-            <required>false</required>
-            <type>java.lang.Boolean</type>
-            <description>Default = true</description>
-        </attribute>
-    </tag>
+	<tag>
+		<tag-name>img</tag-name>
+		<component>
+			<component-type>UIImg</component-type>
+		</component>
 
-    <tag>
-        <tag-name>div</tag-name>
-        <component>
-            <component-type>UIDiv</component-type>
-        </component>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Document ID</description>
+		</attribute>
+		<attribute>
+			<name>src</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+			<description>Image URI</description>
+		</attribute>
+		<attribute>
+			<name>alt</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Text replace</description>
+		</attribute>
+		<attribute>
+			<name>css</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description></description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description></description>
+		</attribute>
+		<attribute>
+			<name>shape</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>["img-rounded", "img-circle", "img-thumbnail"]</description>
+		</attribute>
+		<attribute>
+			<name>responsive</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = false</description>
+		</attribute>
+		<attribute>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = true</description>
+		</attribute>
+	</tag>
 
-        <attribute>
-            <name>id</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>Document ID</description>
-        </attribute>
-        <attribute>
-            <name>css</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>CSS Class</description>
-        </attribute>
-        <attribute>
-            <name>style</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>Style</description>
-        </attribute>
-        <attribute>
-            <name>rendered</name>
-            <required>false</required>
-            <type>java.lang.Boolean</type>
-            <description>Default = true</description>
-        </attribute>
-    </tag>
+	<tag>
+		<tag-name>div</tag-name>
+		<component>
+			<component-type>UIDiv</component-type>
+		</component>
 
-    <tag>
-        <tag-name>span</tag-name>
-        <component>
-            <component-type>UISpan</component-type>
-        </component>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Document ID</description>
+		</attribute>
+		<attribute>
+			<name>css</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>CSS Class</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Style</description>
+		</attribute>
+		<attribute>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = true</description>
+		</attribute>
+	</tag>
 
-        <attribute>
-            <name>id</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>Document ID</description>
-        </attribute>
-        <attribute>
-            <name>css</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>CSS Class</description>
-        </attribute>
-        <attribute>
-            <name>style</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>Style</description>
-        </attribute>
-        <attribute>
-            <name>rendered</name>
-            <required>false</required>
-            <type>java.lang.Boolean</type>
-            <description>Default = true</description>
-        </attribute>
-    </tag>
+	<tag>
+		<tag-name>span</tag-name>
+		<component>
+			<component-type>UISpan</component-type>
+		</component>
+
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Document ID</description>
+		</attribute>
+		<attribute>
+			<name>css</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>CSS Class</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Style</description>
+		</attribute>
+		<attribute>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = true</description>
+		</attribute>
+	</tag>
 	
 	<tag>
-        <tag-name>navbar</tag-name>
-        <component>
-            <component-type>UINavbar</component-type>
-        </component>
+		<tag-name>navbar</tag-name>
+		<component>
+			<component-type>UINavbar</component-type>
+		</component>
 
-        <attribute>
-            <name>id</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>Document ID</description>
-        </attribute>
 		<attribute>
-            <name>mode</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>["navbar-fixed-top", "navbar-fixed-bottom", "navbar-static-top"]</description>
-        </attribute>
-        <attribute>
-            <name>css</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>CSS Class</description>
-        </attribute>
-        <attribute>
-            <name>style</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>Style</description>
-        </attribute>
+			<name>id</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Document ID</description>
+		</attribute>
 		<attribute>
-            <name>role</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description></description>
-        </attribute>
+			<name>mode</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>["navbar-fixed-top", "navbar-fixed-bottom", "navbar-static-top"]</description>
+		</attribute>
 		<attribute>
-            <name>responsive</name>
-            <required>false</required>
-            <type>java.lang.Boolean</type>
-            <description>Default = false</description>
-        </attribute>
+			<name>css</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>CSS Class</description>
+		</attribute>
 		<attribute>
-            <name>inverse</name>
-            <required>false</required>
-            <type>java.lang.Boolean</type>
-            <description>Default = false</description>
-        </attribute>
-        <attribute>
-            <name>rendered</name>
-            <required>false</required>
-            <type>java.lang.Boolean</type>
-            <description>Default = true</description>
-        </attribute>
-    </tag>
+			<name>style</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Style</description>
+		</attribute>
+		<attribute>
+			<name>role</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description></description>
+		</attribute>
+		<attribute>
+			<name>responsive</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = false</description>
+		</attribute>
+		<attribute>
+			<name>inverse</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = false</description>
+		</attribute>
+		<attribute>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = true</description>
+		</attribute>
+	</tag>
 	
 	<tag>
-        <tag-name>navbarhead</tag-name>
-        <component>
-            <component-type>UINavbarHeader</component-type>
-        </component>
+		<tag-name>navbarhead</tag-name>
+		<component>
+			<component-type>UINavbarHeader</component-type>
+		</component>
 
-        <attribute>
-            <name>css</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>CSS Class</description>
-        </attribute>
-        <attribute>
-            <name>style</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>Style</description>
-        </attribute>
 		<attribute>
-            <name>responsive</name>
-            <required>false</required>
-            <type>java.lang.Boolean</type>
-            <description>Default = false</description>
-        </attribute>
-        <attribute>
-            <name>rendered</name>
-            <required>false</required>
-            <type>java.lang.Boolean</type>
-            <description>Default = true</description>
-        </attribute>
-    </tag>
+			<name>id</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Document ID</description>
+		</attribute>
+		<attribute>
+			<name>css</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>CSS Class</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Style</description>
+		</attribute>
+		<attribute>
+			<name>responsive</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = false</description>
+		</attribute>
+		<attribute>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = true</description>
+		</attribute>
+	</tag>
 	<tag>
-        <tag-name>navbarbody</tag-name>
-        <component>
-            <component-type>UINavbarBody</component-type>
-        </component>
+		<tag-name>navbarbody</tag-name>
+		<component>
+			<component-type>UINavbarBody</component-type>
+		</component>
 
-        <attribute>
-            <name>css</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>CSS Class</description>
-        </attribute>
-        <attribute>
-            <name>style</name>
-            <required>false</required>
-            <type>java.lang.String</type>
-            <description>Style</description>
-        </attribute>
+
 		<attribute>
-            <name>responsive</name>
-            <required>false</required>
-            <type>java.lang.Boolean</type>
-            <description>Default = false</description>
-        </attribute>
-        <attribute>
-            <name>rendered</name>
-            <required>false</required>
-            <type>java.lang.Boolean</type>
-            <description>Default = true</description>
-        </attribute>
-    </tag>
+			<name>id</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Document ID</description>
+		</attribute>
+		<attribute>
+			<name>css</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>CSS Class</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Style</description>
+		</attribute>
+		<attribute>
+			<name>role</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description></description>
+		</attribute>
+		<attribute>
+			<name>responsive</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = false</description>
+		</attribute>
+		<attribute>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = true</description>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<tag-name>dropdown</tag-name>
+		<component>
+			<component-type>UIDropdown</component-type>
+		</component>
+
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Document ID</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+			<description>Value</description>
+		</attribute>
+		<attribute>
+			<name>css</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>CSS Class</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Style</description>
+		</attribute>
+		<attribute>
+			<name>role</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description></description>
+		</attribute>
+		<attribute>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<description>Default = true</description>
+		</attribute>
+	</tag>
 </facelet-taglib>

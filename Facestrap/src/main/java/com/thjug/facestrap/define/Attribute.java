@@ -21,5 +21,5 @@ package com.thjug.facestrap.define;
 public enum Attribute {
 
 	rendered,
-	id, css, style, type, value, rel, href, src, alt, shape, responsive, inverse, role, mode
+	id, css, style, type, value, rel, href, src, alt, shape, responsive, inverse, role, mode,
 }

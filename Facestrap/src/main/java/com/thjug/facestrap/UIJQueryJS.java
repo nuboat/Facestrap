@@ -24,13 +24,12 @@ import javax.faces.context.FacesContext;
  *
  * @author nuboat
  */
-@FacesComponent("UIBootstrapJS")
-public class UIBootstrapJS extends UIComponentBase {
+@FacesComponent("UIJQueryJS")
+public class UIJQueryJS extends UIComponentBase {
 
 	@Override
 	public void encodeBegin(final FacesContext context) throws IOException {
 		IncludeResource.includeJQuery(context);
-		IncludeResource.includeBootstrapJS(context);
 		super.encodeBegin(context);
 	}
 
